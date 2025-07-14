@@ -8,35 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Paleta inspirada en Jujuy - Cerro Paleta del Pintor */
+    --background: 42 15% 97%;
+    --foreground: 25 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 20% 95%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 20% 95%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ocre principal - inspirado en las montañas de Maimará */
+    --primary: 35 45% 45%;
+    --primary-foreground: 42 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Verde serrano suave */
+    --secondary: 85 25% 75%;
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 12% 88%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Rosa empolvado - atardeceres jujeños */
+    --accent: 15 30% 82%;
+    --accent-foreground: 25 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 42 15% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 15% 85%;
+    --input: 40 15% 90%;
+    --ring: 35 45% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Gradientes temáticos */
+    --gradient-paleta: linear-gradient(135deg, hsl(35 45% 45%), hsl(15 50% 65%), hsl(45 40% 70%));
+    --gradient-serrano: linear-gradient(180deg, hsl(85 30% 85%), hsl(40 20% 92%));
+    --gradient-atardecer: linear-gradient(45deg, hsl(15 60% 75%), hsl(35 50% 80%));
+    
+    /* Sombras suaves */
+    --shadow-warm: 0 4px 20px hsl(35 45% 45% / 0.15);
+    --shadow-soft: 0 2px 10px hsl(25 25% 15% / 0.08);
+    
+    /* Transiciones suaves */
+    --transition-gentle: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
