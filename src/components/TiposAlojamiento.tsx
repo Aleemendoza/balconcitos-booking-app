@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useNavigate } from "react-router-dom";
 import { 
   Home, 
@@ -15,6 +16,14 @@ import {
   Utensils
 } from "lucide-react";
 
+// Importar imágenes
+import cabanaInterior from "@/assets/cabana-interior-1.jpg";
+import cabanaExterior from "@/assets/cabana-exterior-1.jpg";
+import cabanaCocina from "@/assets/cabana-cocina-1.jpg";
+import monoInterior from "@/assets/mono-interior-1.jpg";
+import monoBano from "@/assets/mono-bano-1.jpg";
+import monoCocina from "@/assets/mono-cocina-1.jpg";
+
 const TiposAlojamiento = () => {
   const navigate = useNavigate();
 
@@ -27,6 +36,11 @@ const TiposAlojamiento = () => {
       capacidad: "2-4 personas",
       precio: "Desde $25.000/noche",
       imagen: "🏡",
+      galeria: [
+        { src: cabanaInterior, alt: "Interior de la cabaña con decoración cálida" },
+        { src: cabanaExterior, alt: "Terraza con vista al Cerro Paleta del Pintor" },
+        { src: cabanaCocina, alt: "Cocina completa con comedor" }
+      ],
       caracteristicas: [
         { icon: Bed, texto: "2 dormitorios" },
         { icon: Home, texto: "Terraza privada" },
@@ -44,6 +58,11 @@ const TiposAlojamiento = () => {
       capacidad: "2-3 personas",
       precio: "Desde $18.000/noche",
       imagen: "🏠",
+      galeria: [
+        { src: monoInterior, alt: "Interior del monoambiente moderno" },
+        { src: monoCocina, alt: "Kitchenette completamente equipada" },
+        { src: monoBano, alt: "Baño moderno con todos los servicios" }
+      ],
       caracteristicas: [
         { icon: Bed, texto: "1 ambiente" },
         { icon: Home, texto: "Planta baja" },
@@ -101,6 +120,27 @@ const TiposAlojamiento = () => {
               </CardHeader>
 
               <CardContent className="space-y-6">
+                {/* Galería de imágenes */}
+                <div className="relative">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {alojamiento.galeria.map((imagen, index) => (
+                        <CarouselItem key={index}>
+                          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                            <img
+                              src={imagen.src}
+                              alt={imagen.alt}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
+                </div>
+
                 {/* Características principales */}
                 <div className="grid grid-cols-2 gap-3">
                   {alojamiento.caracteristicas.map((carac, index) => (
